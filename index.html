@@ -6,12 +6,12 @@
     <title>고2반_파워업_단어연습</title>
     <style>
         :root {
-            /* 청색이 가미된 깊고 진한 초록색 (Deep Pine Green) */
+            /* 청색이 가미된 깊고 진한 초록색 */
             --primary: #004d40; 
             --primary-hover: #00332d; 
             --text-light: #ffffff;
             --text-sub: #546e7a;
-            --bg-body: #e0f2f1; /* 배경도 청록색 톤에 맞춰 살짝 변경 */
+            --bg-body: #e0f2f1; 
             --card-bg: #ffffff;
         }
 
@@ -82,7 +82,7 @@
 
         .folder-name {
             font-weight: bold;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             letter-spacing: -0.5px;
         }
 
@@ -110,7 +110,7 @@
     <div class="header">
         <h1>🍒 고2반_파워업_단어연습</h1>
         <p>
-            내신과 수능의 기초, 파워업 단어훈련입니다!!<br>
+            내신과 수능의 기초, 파워업 단어 훈련입니다!!<br>
             꾸준함이 실력을 만듭니다. 오늘도 집중해서 활용합시다.
         </p>
     </div>
@@ -127,7 +127,7 @@
 <script>
     const grid = document.getElementById('folderGrid');
     
-    // 01회부터 15회까지 생성
+    // 01회부터 15회까지 생성 ("연습" 단어 제거)
     for (let i = 1; i <= 15; i++) {
         const num = String(i).padStart(2, '0');
         const folderName = `파워업_${num}회`;
@@ -137,7 +137,7 @@
         card.className = `folder-card`;
         
         card.innerHTML = `
-            <span class="folder-name">${num}회 연습</span>
+            <span class="folder-name">${num}회</span>
         `;
         grid.appendChild(card);
     }
