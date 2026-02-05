@@ -1,19 +1,11 @@
-import os
-
-# 1. 생성할 회차 범위 설정 (01회 ~ 15회)
-start_num = 1
-end_num = 15
-
-# 2. [완성본] 고3 수능실감 레이아웃 + 고2 파워업 테마 결합 템플릿
-# 레이아웃과 버튼 구조는 go3_sub_index.html과 동일하며, 색상과 아이콘만 수정되었습니다.
-html_template = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} 단어연습</title>
+    <title>파워업_01회 단어연습</title>
     <style>
-        :root {{ 
+        :root {
             /* 고2 파워업 대문 페이지와 일치하는 딥 에메랄드 컬러 시스템 */
             --primary: #004d40; 
             --primary-hover: #00332d; 
@@ -21,29 +13,29 @@ html_template = """<!DOCTYPE html>
             --text-sub: #546e7a;
             --bg-body: #e0f2f1; /* 연한 에메랄드 배경 */
             --card-bg: #ffffff;
-        }}
+        }
 
-        body {{ 
-            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; 
-            background-color: var(--bg-body); 
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: var(--bg-body);
             color: #263238;
             margin: 0;
             padding: 20px;
             display: flex; 
             justify-content: center; 
-        }}
+        }
 
-        .container {{ 
-            width: 100%; 
-            max-width: 800px; 
-            background: var(--card-bg); 
-            padding: 40px 20px; 
-            border-radius: 24px; 
-            box-shadow: 0 4px 20px rgba(0, 77, 64, 0.1); 
-            text-align: center; 
-        }}
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card-bg);
+            padding: 40px 20px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 77, 64, 0.1);
+            text-align: center;
+        }
 
-        .header h1 {{ 
+        .header h1 {
             font-size: 2.2rem;
             color: var(--primary); 
             margin-bottom: 15px;
@@ -51,24 +43,24 @@ html_template = """<!DOCTYPE html>
             align-items: center; 
             justify-content: center; 
             gap: 12px; 
-        }}
+        }
 
-        .header p {{
+        .header p {
             font-size: 1.15rem;
             color: var(--text-sub);
             line-height: 1.6;
             margin-bottom: 40px;
-        }}
+        }
 
-        /* 고3 수능실감의 검증된 2열 그리드 레이아웃 그대로 유지 */
-        .grid-container {{ 
+        /* 고3 수능실감의 2열 그리드 레이아웃 그대로 적용 */
+        .grid-container {
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
             gap: 15px; 
             padding: 10px;
-        }}
+        }
 
-        .quiz-card {{ 
+        .quiz-card {
             background-color: var(--primary); 
             color: var(--text-light); 
             border-radius: 14px; 
@@ -82,22 +74,22 @@ html_template = """<!DOCTYPE html>
             font-weight: bold; 
             font-size: 1.05rem;
             box-shadow: 0 4px 6px rgba(0, 77, 64, 0.15);
-        }}
+        }
 
-        .quiz-card:hover {{ 
+        .quiz-card:hover {
             background-color: var(--primary-hover); 
             transform: translateY(-5px); 
             box-shadow: 0 10px 15px rgba(0, 77, 64, 0.3);
-        }}
+        }
 
         /* 하단 내비게이션 (고2 대문으로 돌아가기) */
-        .nav-footer {{
+        .nav-footer {
             margin-top: 40px;
             padding-top: 25px;
             border-top: 2px solid #cfd8dc;
-        }}
+        }
 
-        .back-link {{ 
+        .back-link {
             display: inline-block; 
             margin-top: 10px;
             color: var(--primary); 
@@ -107,30 +99,30 @@ html_template = """<!DOCTYPE html>
             border-bottom: 2px solid var(--primary);
             padding-bottom: 2px;
             transition: opacity 0.2s;
-        }}
+        }
 
-        .back-link:hover {{
+        .back-link:hover {
             opacity: 0.7;
-        }}
+        }
 
-        footer {{
+        footer {
             margin-top: 50px;
             padding-top: 25px;
             color: #90a4ae;
             font-size: 0.9rem;
-        }}
+        }
 
-        @media (max-width: 500px) {{ 
-            .grid-container {{ grid-template-columns: 1fr; }} 
-            .header h1 {{ font-size: 1.7rem; }}
-        }}
+        @media (max-width: 500px) { 
+            .grid-container { grid-template-columns: 1fr; } 
+            .header h1 { font-size: 1.7rem; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <h1>🍒 {title}</h1>
+        <h1>🍒 파워업_01회</h1>
         <p>
             내신과 수능의 기초, 파워업 단어 훈련입니다!!<br>
             준비된 문항을 선택하여 학습을 시작하세요.
@@ -153,8 +145,8 @@ html_template = """<!DOCTYPE html>
     </div>
 
     <div class="nav-footer">
-        <!-- 고2 대문(index.html)이 있는 상위 경로로 이동 -->
-        <a href="../" class="back-link">← 전체 회차 목록으로 돌아가기</a>
+        <!-- 상위 폴더의 대문(index.html)으로 이동 -->
+        <a href="../index.html" class="back-link">← 전체 회차 목록으로 돌아가기</a>
     </div>
 
     <footer>
@@ -164,21 +156,3 @@ html_template = """<!DOCTYPE html>
 
 </body>
 </html>
-"""
-
-# 폴더 및 파일 생성 실행
-for i in range(start_num, end_num + 1):
-    num_str = f"{i:02d}"
-    # 대문 JS 링크 구조와 일치하는 폴더명 (예: 파워업_01회)
-    folder_name = f"파워업_{num_str}회"
-    title_name = f"파워업_{num_str}회"
-    
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
-    
-    # 각 폴더에 index.html 파일 저장
-    file_path = os.path.join(folder_name, "index.html")
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(html_template.format(title=title_name))
-
-print(f"✅ 성공: {start_num}회부터 {end_num}회까지 {end_num - start_num + 1}개의 폴더와 최적화된 index.html이 생성되었습니다.")
