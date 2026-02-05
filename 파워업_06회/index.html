@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파워업_06회 단어연습</title>
+    <style>
+        :root {
+            /* 고2 파워업 대문 페이지와 일치하는 딥 에메랄드 컬러 시스템 */
+            --primary: #004d40; 
+            --primary-hover: #00332d; 
+            --text-light: #ffffff;
+            --text-sub: #546e7a;
+            --bg-body: #e0f2f1; /* 연한 에메랄드 배경 */
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: var(--bg-body);
+            color: #263238;
+            margin: 0;
+            padding: 20px;
+            display: flex; 
+            justify-content: center; 
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card-bg);
+            padding: 40px 20px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 77, 64, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: var(--primary); 
+            margin-bottom: 15px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 12px; 
+        }
+
+        .header p {
+            font-size: 1.15rem;
+            color: var(--text-sub);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* 고3 수능실감의 2열 그리드 레이아웃 그대로 적용 */
+        .grid-container {
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+            padding: 10px;
+        }
+
+        .quiz-card {
+            background-color: var(--primary); 
+            color: var(--text-light); 
+            border-radius: 14px; 
+            padding: 20px 10px; 
+            text-decoration: none; 
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 65px;
+            font-weight: bold; 
+            font-size: 1.05rem;
+            box-shadow: 0 4px 6px rgba(0, 77, 64, 0.15);
+        }
+
+        .quiz-card:hover {
+            background-color: var(--primary-hover); 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 15px rgba(0, 77, 64, 0.3);
+        }
+
+        /* 하단 내비게이션 (고2 대문으로 돌아가기) */
+        .nav-footer {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #cfd8dc;
+        }
+
+        .back-link {
+            display: inline-block; 
+            margin-top: 10px;
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            color: #90a4ae;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 500px) { 
+            .grid-container { grid-template-columns: 1fr; } 
+            .header h1 { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🍒 파워업_06회</h1>
+        <p>
+            내신과 수능의 기초, 파워업 단어 훈련입니다!!<br>
+            준비된 문항을 선택하여 학습을 시작하세요.
+        </p>
+    </div>
+
+    <div class="grid-container">
+        <a href="빈칸_01.html" class="quiz-card">빈칸_01</a>
+        <a href="빈칸_02.html" class="quiz-card">빈칸_02</a>
+        <a href="빈칸_03.html" class="quiz-card">빈칸_03</a>
+        <a href="빈칸_04.html" class="quiz-card">빈칸_04</a>
+        <a href="빈칸_05.html" class="quiz-card">빈칸_05</a>
+        <a href="문맥단어.html" class="quiz-card">문맥단어</a>
+        <a href="요약완성.html" class="quiz-card">요약완성</a>
+        <a href="장문독해.html" class="quiz-card">장문독해</a>
+        <a href="밑줄의미.html" class="quiz-card">밑줄의미</a>
+        <a href="주제찾기.html" class="quiz-card">주제찾기</a>
+        <a href="제목찾기.html" class="quiz-card">제목찾기</a>
+        <a href="문장삽입.html" class="quiz-card">문장삽입</a>
+    </div>
+
+    <div class="nav-footer">
+        <!-- 상위 폴더의 대문(index.html)으로 이동 -->
+        <a href="../index.html" class="back-link">← 전체 회차 목록으로 돌아가기</a>
+    </div>
+
+    <footer>
+        &copy; 2024 파워업 단어 문제풀이 시스템. 모든 권리 보유.
+    </footer>
+</div>
+
+</body>
+</html>
+
